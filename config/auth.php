@@ -91,7 +91,7 @@ return [
     | they have less time to be guessed. You may change this as needed.
     |
     */
-
+//     'password_timeout' => 60,
     'passwords' => [
         'users' => [
             'provider' => 'users',

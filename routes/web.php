@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::view('test','test');
 
-Route::prefix('admin')->middleware('auth')->group(function (){
+Route::prefix('admin')->middleware(['auth','password.confirm'])->group(function (){
 
     Route::view('/','Dashboard/admin');
     Route::Get('/welcome','WelcomeController@welcome');
