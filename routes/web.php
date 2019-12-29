@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::view('test','test');
 
-Route::prefix('admin')->middleware(['auth','password.confirm'])->group(function (){
+Route::prefix('admin')->middleware(['auth','password.confirm','verified'])->group(function (){
 
     Route::view('/','Dashboard/admin');
     Route::Get('/welcome','WelcomeController@welcome');
@@ -48,6 +48,6 @@ Route::prefix('admin')->middleware(['auth','password.confirm'])->group(function 
 
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
