@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   <p>Token: {{ request()->user()->token ?? 'N/A' }}</p>
+                        <form action="{{ route('home') }}" method="post">
+                            @csrf
+                            <input type="submit" class="btn btn-outline-primary" value="Generate Token">
+                        </form>
                 </div>
             </div>
         </div>

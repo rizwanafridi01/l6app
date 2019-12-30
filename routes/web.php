@@ -50,4 +50,4 @@ Route::prefix('admin')->middleware(['auth','password.confirm','verified'])->grou
 
 Auth::routes(['verify'=>true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::match(['get', 'post'],'/home', 'HomeController@index')->name('home');

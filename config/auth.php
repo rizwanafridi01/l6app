@@ -92,6 +92,7 @@ return [
     |
     */
 //     'password_timeout' => 60,
+    'storage_key'=> 'token',
     'passwords' => [
         'users' => [
             'provider' => 'users',
