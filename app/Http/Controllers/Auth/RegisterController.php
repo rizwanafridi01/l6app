@@ -72,7 +72,7 @@ class RegisterController extends Controller
         ]);
         $userProfile = new UserProfile([
             'user_id' => $user->id,
-            'country_id' => 0,
+            'country_id' => 1,
             'city' => 'default',
             'phone' => 12345,
             'address' => "11 Street",

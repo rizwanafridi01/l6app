@@ -19,7 +19,9 @@ Route::get('/', function () {
 
 Route::view('test','test');
 
-Route::prefix('admin')->middleware(['auth','password.confirm','verified'])->group(function (){
+//Route::prefix('admin')->middleware(['auth','password.confirm','verified'])->group(function (){
+//Route::prefix('admin')->middleware(['auth','can:isAdmin'])->group(function (){
+Route::prefix('admin')->middleware(['auth'])->group(function (){
 
     Route::view('/','Dashboard/admin');
     Route::Get('/welcome','WelcomeController@welcome');

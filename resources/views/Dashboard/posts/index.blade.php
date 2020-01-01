@@ -49,12 +49,14 @@
 
 
                         <div class="btn-group" role="group" aria-label="Basic example">
+                            @can('isAdmin')
                             <a role="button" href="{{ route('posts.edit', $post->id) }}"  class="btn btn-link">edit</a>
                             <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                             <button type="submit" class="btn btn-link">Delete</button>
                             </form>
+                            @endcan
                             <a role="button" href="{{ route('posts.show', $post->id) }}" class="btn btn-link">show</a>
                         </div>
 
